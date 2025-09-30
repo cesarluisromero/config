@@ -1,20 +1,24 @@
 server:
-  port: 8081
+  port: 8080   # recomiendo 8080 para el gateway
 
 spring:
   application:
     name: api-gateway
-
-spring:
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true      # útil si tus ids de servicio van en minúsculas
       routes:
-        - id: persona-route
-          uri: lb://persona-service
+        - id: customer-route
+          uri: lb://customer               # nombre EXACTO del servicio (spring.application.name del micro)
           predicates:
-            - Path=/api/personas/**
+            - Path=/api/customers/**
           filters:
             - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

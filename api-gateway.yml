@@ -17,6 +17,12 @@ spring:
             - Path=/api/customers/**
           filters:
             - StripPrefix=1
+        - id: bank-account-route
+          uri: lb://bank-account
+          predicates:
+            - Path=/api/accounts/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   client:

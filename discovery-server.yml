@@ -4,6 +4,18 @@ server:
 spring:
   application:
     name: discovery-server
+  cache:
+    type: caffeine
+    cache-names: customersByDoc,customersById
+    caffeine:
+      # 1000 entradas, 10 min de vida, con métricas
+      spec: maximumSize=1000,expireAfterWrite=10m,recordStats
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,caches
+
 
 eureka:
   instance:

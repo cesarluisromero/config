@@ -17,10 +17,16 @@ spring:
             - Path=/api/customers/**
           filters:
             - StripPrefix=1
-        - id: bank-account-route
-          uri: lb://bank-account
+        - id: bank_account-route
+          uri: lb://bank_account
           predicates:
             - Path=/api/accounts/**
+          filters:
+            - StripPrefix=1
+        - id: bank_card-route
+          uri: lb://bank_card
+          predicates:
+            - Path=/api/cards/**
           filters:
             - StripPrefix=1
 

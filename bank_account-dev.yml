@@ -20,6 +20,16 @@ springdoc:
     
 customer-service:
   base-url: http://customer/customers
+  
+
+account:
+  rules:
+    savings:
+      monthly-movement-limit: 10        # cambia a tu gusto
+    current:
+      maintenance-fee: 12.50            # comisión mensual
+    fixed-term:
+      allowed-day-of-month: 15          # día permitido (1..28/31)
 
 
 

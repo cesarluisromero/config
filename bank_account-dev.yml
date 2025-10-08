@@ -19,7 +19,7 @@ springdoc:
 
     
 customer-service:
-  base-url: http://api-gateway/api/customers
+  base-url: http://customer/customers
 
 
 

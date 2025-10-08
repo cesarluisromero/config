@@ -16,6 +16,10 @@ eureka:
 springdoc:
   api-docs.path: /v3/api-docs
   swagger-ui.path: /swagger-ui.html
+  
+
+customer-service:
+  base-url: http://customer/customers
 
     
 
